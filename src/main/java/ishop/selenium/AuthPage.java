@@ -11,7 +11,6 @@ public class AuthPage extends BaseActions {
     private static final By SUBMIT_LOGIN_BTN = By.cssSelector(".btn-success");
 
     private static final By ALERT_DANGER = By.cssSelector(".alert.alert-danger.col-xs-offset-1.col-xs-10");
-    private static final By ALERT_DANGER_CONTAINER_TEXT = By.cssSelector(".alert.alert-danger.col-xs-offset-1.col-xs-10#text");
 
     public AuthPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
@@ -37,7 +36,7 @@ public class AuthPage extends BaseActions {
     }
 
     public String getAlertContainerText() {
-        return driver.findElement(ALERT_DANGER_CONTAINER_TEXT).getText();
+        return driver.findElement(ALERT_DANGER).getText();
     }
 
 }

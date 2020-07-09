@@ -9,7 +9,9 @@ public class LoginTest extends BaseUITest {
     public Object[][] clickDealsData() {
 
         return new Object[][]{
-                {"", "", "Invalid username and password."}
+                {"", "", "Invalid username and password."},
+                {"superadmin", "", "Invalid username and password."},
+                {"", "superadmin", "Invalid username and password."}
         };
     }
 
