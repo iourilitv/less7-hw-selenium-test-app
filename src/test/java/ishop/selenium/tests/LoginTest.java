@@ -16,7 +16,7 @@ public class LoginTest extends BaseUITest {
     }
 
     @Test(dataProvider = "usernamePasswordResult")
-    public void tryToLogin(String username, String password, String result) {
+    public void tryToLoginWithError(String username, String password, String result) {
         homePage.home();
         topMenuFrag.goToAuthPageByLogin();
         Assert.assertTrue(authPage.checkFormHeader("Sign In"));

@@ -21,4 +21,14 @@ public class AdminModeTest extends BaseUITest {
         Assert.assertTrue(topMenuFrag.isUserAuthorizedToAdminMode());
     }
 
+    @Test
+    public void isAdminModeIndexPagePresented() {
+        catalogPage.index();
+        topMenuFrag.goToAuthPageByLogin();
+        authPage.fillSignInFormAndConfirm("superadmin", "superadmin");
+        Assert.assertTrue(topMenuFrag.isUserAuthorizedToAdminMode());
+        topMenuFrag.pressAdminModeLink();
+        Assert.assertTrue(topMenuFrag.isTextPresentedInAdminModeElements("Leave Admin Mode"));
+        Assert.assertEquals(adminPage.getMenuItemsCount(), 7);
+    }
 }

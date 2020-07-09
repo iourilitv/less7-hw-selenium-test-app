@@ -1,9 +1,6 @@
 package ishop.selenium.tests;
 
-import ishop.selenium.AuthPage;
-import ishop.selenium.CatalogPage;
-import ishop.selenium.HomePage;
-import ishop.selenium.TopMenuFrag;
+import ishop.selenium.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,7 +18,7 @@ public class BaseUITest {
     CatalogPage catalogPage;
     AuthPage authPage;
     TopMenuFrag topMenuFrag;
-//    RegistrationPage registrationPage;
+    AdminPage adminPage;
 
     @BeforeMethod
     public void setUp() {
@@ -32,7 +29,7 @@ public class BaseUITest {
         this.catalogPage = new CatalogPage(driver, wait);
         this.authPage = new AuthPage(driver, wait);
         this.topMenuFrag = new TopMenuFrag(driver, wait);
-//        this.registrationPage = new RegistrationPage(driver, wait);
+        this.adminPage = new AdminPage(driver, wait);
     }
 
     @AfterMethod

@@ -1,12 +1,10 @@
 package ishop.selenium.tests;
 
 import org.testng.Assert;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 public class CatalogTest extends BaseUITest {
     @Test
-    @Ignore
     public void checkCatalogPage() {
         homePage.home();
         Assert.assertTrue(catalogPage.isProductPresented());
@@ -14,7 +12,6 @@ public class CatalogTest extends BaseUITest {
 
     //unauthorized mode
     @Test
-    @Ignore
     public void checkEmptyCartMenuItem() {
         catalogPage.index();
         int count = topMenuFrag.getCartItemCountInMenu();
