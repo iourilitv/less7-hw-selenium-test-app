@@ -10,6 +10,9 @@ import java.util.List;
 public class TopMenuFrag extends BaseActions {
     private static final By LOGIN_LINK = By.cssSelector("a.login-link");
     private static final By LOGOUT_LINK = By.cssSelector("button.login-link");
+
+    private static final By ADMIN_MODE = By.cssSelector("a.fa.login-link");
+
     private static final By MAIN_NAV_BAR = By.cssSelector("div.nav-menu");
     private static final By MAIN_NAV_ITEM = By.cssSelector("li.mega-menu");
 
@@ -51,5 +54,26 @@ public class TopMenuFrag extends BaseActions {
         return null;
     }
 
+    public boolean isUserAuthorizedToAdminMode() {
+        List<WebElement> elements = driver.findElements(ADMIN_MODE);
+        for (WebElement e: elements) {
+            System.out.println(e.getText());
+            if (e.getText().equalsIgnoreCase("Admin Mode")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isTextPresentedInAdminModeElements(String text) {
+        List<WebElement> elements = driver.findElements(ADMIN_MODE);
+        for (WebElement e: elements) {
+            System.out.println(e.getText());
+            if (e.getText().equalsIgnoreCase(text)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 

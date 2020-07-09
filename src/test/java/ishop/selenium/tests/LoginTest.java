@@ -25,4 +25,21 @@ public class LoginTest extends BaseUITest {
         Assert.assertEquals(result, authPage.getAlertContainerText());
     }
 
+    @DataProvider(name = "usernamePassword")
+    public Object[][] clickData() {
+
+        return new Object[][]{
+                {"superadmin", "superadmin"},
+                {"admin", "admin"}
+        };
+    }
+
+    @Test(dataProvider = "usernamePassword")
+    public void isUsernamePresentedAfterLogin(String username, String password) {
+        catalogPage.index();
+        Assert.assertTrue(topMenuFrag.isTextPresentedInAdminModeElements("Register"));
+        topMenuFrag.goToAuthPageByLogin();
+        authPage.fillSignInFormAndConfirm(username, password);
+        Assert.assertTrue(topMenuFrag.isTextPresentedInAdminModeElements(username));
+    }
 }
