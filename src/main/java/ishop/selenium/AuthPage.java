@@ -17,6 +17,7 @@ public class AuthPage extends BaseActions {
     }
 
     public void fillSignInFormAndConfirm(String username, String password) {
+        //без задержки не успевает заполниться первое поле(даже менял на поле пароля)
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {

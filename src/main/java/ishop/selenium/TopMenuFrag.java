@@ -29,14 +29,12 @@ public class TopMenuFrag extends BaseActions {
     }
 
     public void callSingInFormByCartMenuItemClicking() {
-//        WebElement cartMenuItem = getMenuItemByName("cart");
         WebElement cartMenuItem = getWebElementByText(MAIN_NAV_ITEM, "cart");
         assert cartMenuItem != null;
         cartMenuItem.click();
     }
 
     public int getCartItemCountInMenu() {
-//        WebElement element = getMenuItemByName("cart");
         WebElement element = getWebElementByText(MAIN_NAV_ITEM, "cart");
         assert element != null;
         String text = element.getText().toLowerCase();
@@ -48,44 +46,10 @@ public class TopMenuFrag extends BaseActions {
         return 0;
     }
 
-//    public WebElement findMenuItemByName(String name) {
-//        List<WebElement> elements = driver.findElements(MAIN_NAV_ITEM);
-//        for (WebElement e : elements) {
-//            String text = e.getText().toLowerCase();
-//            if(text.contains(name.toLowerCase())) {
-//                return e;
-//            }
-//        }
-//        return null;
-//    }
-//    public WebElement getMenuItemByName(String name) {
-//        return getWebElementByText(MAIN_NAV_ITEM, name);
-//    }
-
-//    public boolean isUserAuthorizedToAdminMode() {
-//        List<WebElement> elements = driver.findElements(ADMIN_MODE);
-//        for (WebElement e: elements) {
-//            System.out.println(e.getText());
-//            if (e.getText().equalsIgnoreCase("Admin Mode")) {
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
     public boolean isUserAuthorizedToAdminMode() {
         return getWebElementByText(ADMIN_MODE, "Admin Mode") != null;
     }
 
-//    public boolean isTextPresentedInAdminModeElements(String text) {
-//        List<WebElement> elements = driver.findElements(ADMIN_MODE);
-//        for (WebElement e: elements) {
-//            System.out.println(e.getText());
-//            if (e.getText().equalsIgnoreCase(text)) {
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
     public boolean isTextPresentedInAdminModeElements(String text) {
         return getWebElementByText(ADMIN_MODE, text) != null;
     }

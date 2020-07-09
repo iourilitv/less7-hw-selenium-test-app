@@ -25,13 +25,15 @@ public class CatalogPage extends BaseActions {
         return isElementPresent(PRODUCT_ITEM);
     }
 
-    public void pressAddToCartBtn(int index) {
+    public void pressAddToCartButtons() {
         List<WebElement> elements = driver.findElements(ADD_TO_CART_BTN);
         for (WebElement e : elements) {
-            int idx = Integer.parseInt(e.getAttribute("id"));
-            System.out.println(idx);
             e.click();
         }
+    }
+
+    public void pressAddToCartBtn(int index) {
+        List<WebElement> elements = driver.findElements(ADD_TO_CART_BTN);
         elements.get(index).click();
     }
 

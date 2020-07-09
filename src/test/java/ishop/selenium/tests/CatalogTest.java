@@ -28,6 +28,7 @@ public class CatalogTest extends BaseUITest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        catalogPage.pressAddToCartButtons();
         catalogPage.pressAddToCartBtn(0);
         try {
             Thread.sleep(1000);
